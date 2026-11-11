@@ -52,8 +52,8 @@
 
         <!-- NOVA CAIXA DE DIÁLOGO ADICIONADA AQUI -->
         <div class="form-group">
-            <label for="detalhesImovel">Descreva o imóvel que deseja, e o endereço:</label>
-            <textarea id="detalhesImovel" rows="4" required placeholder="Descreva o imóvel que deseja, e o endereço"></textarea>
+            <label for="detalhesImovel">Descreva o imóvel e o endereço:</label>
+            <textarea id="detalhesImovel" rows="4" required placeholder="Sobrado 4 quartos na Asa Sul..."></textarea>
         </div>
 
         <button type="submit">Cadastrar</button>
@@ -77,7 +77,7 @@
             email: document.getElementById('email').value,
             telefone: document.getElementById('telefone').value,
             perfil: document.getElementById('perfil').value,
-            tipoImovel: document.getElementById('tipoImovel').value,
+            tipoImovel: document.getElementById('detalhesImovel').value,
             dataCadastro: new Date().toLocaleDateString('pt-BR')
         };
 
