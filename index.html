@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Clientes - IPI-Imóveis</title>
+    <title>Cadastro de Clientes - Google Sheets</title>
     <style>
         body { font-family: Arial, sans-serif; background-color: #f4f4f9; padding: 20px; }
         .container { max-width: 500px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); margin: 0 auto; }
         h2 { text-align: center; color: #333; }
         .form-group { margin-bottom: 15px; }
         label { display: block; margin-bottom: 5px; font-weight: bold; color: #555; }
-        input, select { width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+        /* Adicionei o textarea aqui no CSS para manter o mesmo visual dos outros campos */
+        input, select, textarea { width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; font-family: Arial, sans-serif; }
+        textarea { resize: vertical; }
         button { width: 100%; padding: 10px; background-color: #0F9D58; color: white; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; }
         button:hover { background-color: #0B7542; }
         button:disabled { background-color: #ccc; cursor: not-allowed; }
@@ -38,27 +40,23 @@
         </div>
 
         <div class="form-group">
-            <label for="perfil">Perfil do Cliente:</label>
+            <label for="perfil">Perfil do Cliente / Interesse:</label>
             <select id="perfil" required>
                 <option value="">Selecione...</option>
-                <option value="Comprador">Comprador</option>
-                <option value="Locatário">Locatário (Inquilino)</option>
-                <option value="Proprietário">Proprietário</option>
+                <option value="Compra">Compra</option>
+                <option value="Aluguel">Aluguel</option>
+                <option value="Investimento">Investimento</option>
+                <option value="Venda">Venda</option>
             </select>
         </div>
 
+        <!-- NOVA CAIXA DE DIÁLOGO ADICIONADA AQUI -->
         <div class="form-group">
-            <label for="tipoImovel">Interesse de Imóvel:</label>
-            <select id="tipoImovel" required>
-                <option value="">Selecione...</option>
-                <option value="Casa">Casa</option>
-                <option value="Apartamento">Apartamento</option>
-                <option value="Terreno">Terreno</option>
-                <option value="Comercial">Comercial</option>
-            </select>
+            <label for="detalhesImovel">Descreva o imóvel que deseja, e o endereço:</label>
+            <textarea id="detalhesImovel" rows="4" required placeholder="Descreva o imóvel que deseja, e o endereço"></textarea>
         </div>
 
-        <button type="submit" id="btnSalvar">Salvar na Planilha</button>
+        <button type="submit">Cadastrar</button>
     </form>
 </div>
 
